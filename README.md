@@ -24,7 +24,7 @@
 
 
 <div align="center">
-    <img src="![79156-registration-form](https://user-images.githubusercontent.com/80456274/150647849-aa38b823-9ead-477c-af14-e0a6b3b8468c.gif)" alt="gif" width="550" height="380">
+    <img src="![79156-registration-form](https://user-images.githubusercontent.com/80456274/150647849-aa38b823-9ead-477c-af14-e0a6b3b8468c.gif)"width="550" height="380">
 </div>
 
 <!-- ABOUT THE PROJECT -->
