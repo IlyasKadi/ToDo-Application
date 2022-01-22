@@ -10,7 +10,6 @@
 </div>
 
 
-
 <!-- TABLE OF CONTENTS -->
 
   <summary>Table of Contents</summary>
@@ -22,12 +21,6 @@
       <li><a href="#Traffic-Light">Item Based Model</a></li> 
       <li><a href="#Digital-clock">MVC Model</a></li>
   </ol>
-
-
-
-
-
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -47,34 +40,7 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- Overview -->
-# Overview
 
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-<!-- Overview -->
-# Overview
-
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-<!-- Overview -->
-# Overview
-
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-<!-- Overview -->
-# Overview
-
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 <!-- Overview -->
 # Overview
 
@@ -84,20 +50,50 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<div align="center">
-    <img src="images/Digitalclock.png" width="600" height="300">
-</div>
+
+<!-- Traffic-Light -->
+# Traffic-Light
 
 
 
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- Digital-clock -->
+# Digital-clock
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- Traffic-Light -->
+# Traffic-Light
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- Digital-clock -->
+# Digital-clock
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 
 Our Team - [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)
 
-Project Link: [Signal-and-Slots](https://github.com/IlyasKadi/ToDo-Application)
+Project Link: [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)
 
 Encadré par : [Mr.BELCAID-Anass](https://anassbelcaid.github.io)
 
