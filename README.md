@@ -23,9 +23,6 @@
   </ol>
 
 
-![Uploading 79156-registration-form.gif…]()
-
-
 
 <!-- ABOUT THE PROJECT -->
 # About The Project
@@ -43,6 +40,9 @@ To get a local copy up and running follow these simple example steps.
    ```
  
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+![gif](https://user-images.githubusercontent.com/80456274/150647986-38f01eb8-5ad7-4b0d-89e0-12df6f7ae8d1.gif)
+
 
 
 <!-- Overview -->
