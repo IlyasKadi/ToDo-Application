@@ -42,8 +42,6 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-📝📧📆🗑️❗⚠️
-
 <!-- Overview -->
 # Overview
 
@@ -645,7 +643,7 @@ loaddatabase():
        Ftaskmodel->clear();
        loaddatabase();
 ```
-We aslo added a delete function for it (after selecting a task) :
+We aslo added a delete 🗑️ function for it (after selecting a task) :
 
 > This is what it looks like before selecting :
 
