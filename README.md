@@ -96,7 +96,17 @@ Here is a list of **cases** that the user could **perform** with our app:
 <!-- Defining-a-Task -->
 # Defining-a-Task
 
+A `Task` is defined by the following attributes:
 
+   - A `description`: stating the text and goal for the task like (Buying the milk).
+   - A `finished` boolean indicating if the task is Finished or due.
+   - A `Tag` category to show the class of the task which is reduced to the following values:
+       - Work
+       - Life
+       - Other
+   - Finally, a task should have a `DueDate` which stores the **Date** planned for the date.
+
+When the user create a new task, the application must **pop up** a dialog for the user to get those values. Here is an example ( not mandatory, I prefer you create your own) example:
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
