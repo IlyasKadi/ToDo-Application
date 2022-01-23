@@ -319,25 +319,29 @@ void ToDoApp::loaddatabase()
 
 void ToDoApp:: select_item_tbd()
 {
+    
     TaskDescription newtask;
-    newtask.db =QSqlDatabase::addDatabase("QSQLITE");
-    newtask.db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
-    newtask.db.open();
 
     const QString format = "ddd MMM d yyyy";
-    QString selectedvalue= ui->to_be_done->currentItem()->text();
+    
+    //Retrieving Task_info from selected items
     QString fulldes = ui->to_be_done->currentItem()->data(0).toString();
+
+    //Retrieving Task_info from selected items
     QVariant i =fulldes.size();
     int index = fulldes.indexOf(':');
 
+    //Filtering Task_info from selected items
     QString description = fulldes.mid(0,index);
     QString date = fulldes.mid(13+index+3,15);
     QDate Date = QDate::fromString(date,"ddd MMM d yyyy");
     QString tag = fulldes.mid(30+index+2,6);
-
+    
+    //Filling up NewTaskEdit from filtered data 
     newtask.ui->lineEdit->setText(description);
     newtask.ui->dateEdit->setDate(Date);
     newtask.ui->comboBox->setCurrentText(tag);
+    //(no need to change checkbox : finsished it's already unchecked by DEFLT)
 
 
     auto reply = newtask.exec();
