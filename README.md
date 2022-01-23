@@ -142,9 +142,8 @@ When the user create a new task, the application must **pop up** a dialog for th
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
  Our Team     : [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)  
  
-  >Project Link : [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)   
+   Project Link : [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)   
  
-  >Encadré par  : [Mr.BELCAID-Anass](https://anassbelcaid.github.io)  
+  > Encadré par  : [Mr.BELCAID-Anass](https://anassbelcaid.github.io)  
                                                                                              
-===
 <p align="right">(<a href="#top">back to top</a>)</p>
