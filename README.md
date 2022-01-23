@@ -31,7 +31,7 @@
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps.![animation_200_kyqhbxtt](https://user-images.githubusercontent.com/80456274/150659079-1e316ae5-7924-4d5d-8261-7d17d8b5f91c.gif)
 
 1. [**How to install Qt**](https://anassbelcaid.github.io/CS221/qtcreator/)
 2. **Clone the repo**
@@ -41,9 +41,9 @@ To get a local copy up and running follow these simple example steps.
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-![animation_200_kyqhbxtt](https://user-images.githubusercontent.com/80456274/150659079-1e316ae5-7924-4d5d-8261-7d17d8b5f91c.gif)
 
 
+📝📧📆🗑️❗⚠️
 
 <!-- Overview -->
 # Overview
