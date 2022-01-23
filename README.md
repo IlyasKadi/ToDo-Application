@@ -159,6 +159,8 @@ private:
 .cpp
 
 ```cpp
+
+//constructor
 ToDoApp::ToDoApp(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::ToDoApp)
@@ -168,7 +170,7 @@ ToDoApp::ToDoApp(QWidget *parent)
     loaddatabase();
 }
 
-
+//Connections for selected_Item aka selected_Task
 void ToDoApp:: makeconnections()
 {
     connect(ui->to_be_done, &QListWidget::itemActivated , this,  &ToDoApp::select_item_tbd);
@@ -176,13 +178,13 @@ void ToDoApp:: makeconnections()
     connect(ui->todays_task, &QListWidget::itemActivated, this,  &ToDoApp::select_item_today);
 }
 
-
+//destructor
 ToDoApp::~ToDoApp()
 {
     delete ui;
 }
 
-
+//NewTAsk Action
 void ToDoApp::on_action_New_triggered()
 {
     TaskDescription newtask ;
