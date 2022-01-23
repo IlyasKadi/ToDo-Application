@@ -609,10 +609,12 @@ void ToDoApp:: select_item_today()
 # MVC-Model
 The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget :
 
-```cpp on_action_New_triggered(): 
+```cpp 
+on_action_New_triggered(): 
 ```
 
-```cpp `loaddatabase(): 
+```cpp
+loaddatabase(): 
 ``` 
 
 ```cpp
