@@ -106,8 +106,10 @@ To get a local copy up and running follow these simple example steps.
 
  
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Our Team     : [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)                                                   |
-| Project Link : [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)                                                                                |
+| Our Team     : [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)  
+|
+| Project Link : [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)   
+|
 | Encadré par  : [Mr.BELCAID-Anass](https://anassbelcaid.github.io)                                                                                               | 
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
