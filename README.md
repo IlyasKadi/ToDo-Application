@@ -607,12 +607,13 @@ void ToDoApp:: select_item_today()
 
 <!-- MVC-Model -->
 # MVC-Model
-The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget :
+The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget
 
 ```cpp 
 TaskManager::TaskManager(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Task
+    //in the constructor :
 ```
 ```cpp
     tttaskmodel = new QStandardItemModel;
@@ -621,13 +622,10 @@ TaskManager::TaskManager(QWidget *parent)
 ``` 
 
 ```cpp 
+//While adding new task or loading the DB
 on_action_New_triggered(): 
-```
-
-```cpp
 loaddatabase(): 
 ``` 
-
 
 ```cpp
     for(auto e :newtask.TBD_list)
@@ -639,9 +637,148 @@ loaddatabase():
 
     }
     
-
 ```
-> And so on .. with other tasks_List (FT_list & TT_list)
+> And so on .. with other tasks_Lists (FT_list & TT_list) and models (tttmodel,Ftaskmodel)
+
+```cpp
+       //While refreshing ListView           
+       TBDmodel->clear();
+       tttaskmodel->clear();
+       Ftaskmodel->clear();
+       loaddatabase();
+```
+The MVC has it's version of moving from a task to another by editing it ,and we added aslo a delete function for it (after selecting a task) :
+
+
+```cpp
+void TaskManager::on_action_Delete_triggered()
+{
+
+        //Pending tasks :
+    if(ui->to_be_done->currentIndex().isValid())
+    {
+        TaskEdit newtask;
+        newtask.db =QSqlDatabase::addDatabase("QSQLITE");
+
+        newtask.db.setDatabaseName("/home/ilyas/Desktop/mvcDB.sqlite");
+        newtask.db.open();
+
+        const QString format = "ddd MMM d yyyy";
+
+        QModelIndex indt = ui->to_be_done->currentIndex();
+
+        QString itemText_t = indt.data(0).toString();
+
+        QString fulldes = itemText_t;
+        int index = fulldes.indexOf(':');
+        QString description = fulldes.mid(0,index);
+        QString date = fulldes.mid(19+index+3,15);
+        QString tag = fulldes.mid(36+index+2,6);
+
+
+            QString sdeleteentry ="DELETE FROM task where description='%1' ";
+            QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
+            if(!delentry.exec(sdeleteentry))
+            {QMessageBox::critical(this,"info","could not delete entry");}
+
+            TBDmodel->clear();
+            tttaskmodel->clear();
+            Ftaskmodel->clear();
+            loaddatabase();
+    }
+
+
+        //Today's tasks :
+    else if(ui->todays_task->currentIndex().isValid())
+    {
+        TaskEdit newtask;
+        newtask.db =QSqlDatabase::addDatabase("QSQLITE");
+
+        newtask.db.setDatabaseName("/home/ilyas/Desktop/mvcDB.sqlite");
+        newtask.db.open();
+
+        const QString format = "ddd MMM d yyyy";
+
+        QModelIndex indt = ui->todays_task->currentIndex();
+
+        QString itemText_t = indt.data(0).toString();
+
+        QString fulldes = itemText_t;
+        int index = fulldes.indexOf(':');
+        QString description = fulldes.mid(0,index);
+        QString date = fulldes.mid(19+index+3,15);
+        QString tag = fulldes.mid(36+index+2,6);
+
+        newtask.ui->lineEdit->setText(description);
+
+
+            QString sdeleteentry ="DELETE FROM task where description='%1' ";
+            QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
+            if(!delentry.exec(sdeleteentry))
+            {QMessageBox::critical(this,"info","could not delete entry");}
+
+
+            //Refreshing ListView
+            TBDmodel->clear();
+            tttaskmodel->clear();
+            Ftaskmodel->clear();
+            loaddatabase();
+    }
+
+        //Finished tasks :
+    else if(ui->finished->currentIndex().isValid())
+    {
+        TaskEdit newtask;
+        newtask.db =QSqlDatabase::addDatabase("QSQLITE");
+
+        newtask.db.setDatabaseName("/home/ilyas/Desktop/mvcDB.sqlite");
+        newtask.db.open();
+
+        const QString format = "ddd MMM d yyyy";
+
+        QModelIndex indt = ui->finished->currentIndex();
+
+        QString itemText_t = indt.data(0).toString();
+
+        QString fulldes = itemText_t;
+        int index = fulldes.indexOf(':');
+        QString description = fulldes.mid(0,index);
+        QString date = fulldes.mid(19+index+3,15);
+        QString tag = fulldes.mid(36+index+2,6);
+
+        newtask.ui->lineEdit->setText(description);
+
+
+            QString sdeleteentry ="DELETE FROM task where description='%1' ";
+            QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
+            if(!delentry.exec(sdeleteentry))
+            {QMessageBox::critical(this,"info","could not delete entry");}
+
+            //Refreshing ListView            
+            TBDmodel->clear();
+            tttaskmodel->clear();
+            Ftaskmodel->clear();
+            loaddatabase();
+   }
+
+
+}
+
+void TaskManager::deleteslot()
+{
+     ui->action_Delete->setEnabled(1);
+
+}
+```
+
+And for the connections :
+```cpp
+    connect(ui->todays_task, &QAbstractItemView::clicked , this,  &TaskManager::deleteslot);
+    connect(ui->finished, &QAbstractItemView::clicked , this,  &TaskManager::deleteslot);
+    connect(ui->to_be_done, &QAbstractItemView::clicked , this,  &TaskManager::deleteslot);
+```
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
