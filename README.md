@@ -649,7 +649,17 @@ loaddatabase():
 ```
 The MVC has it's version of moving from a task to another by editing it ,and we added aslo a delete function for it (after selecting a task) :
 
+This is what it looks like before selecting
 
+<div align="center">
+    <img src="images/before_select.png .png"/>
+</div>
+
+This is what it looks like after selecting
+
+<div align="center">
+    <img src="images/after_select.png .png"/>
+</div>
 ```cpp
 void TaskManager::on_action_Delete_triggered()
 {
