@@ -50,14 +50,14 @@ To get a local copy up and running follow these simple example steps.
 
 
 <div align="center">
-    <img src="images/inter.png" alt="animation" width="100" height="100"/>
+    <img src="images/inter.png"/>
 </div>
 
 > Overview of our application. 
 
 
 <div align="center">
-    <img src="images/todoApp.gif"/>
+    <img src="images/todoApp.gif"alt="animation" width="100" height="100"/>
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
