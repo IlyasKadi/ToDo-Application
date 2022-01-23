@@ -337,24 +337,15 @@ void ToDoApp:: select_item_tbd()
         QString aftag=newtask.ui->comboBox->currentText();
         bool finished=newtask.ui->checkBox->isChecked();
 
-
         QString sdeleteentry ="DELETE FROM task where description='%1' ";
         QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
-
-
         if(!delentry.exec(sdeleteentry))
             QMessageBox::critical(this,"info","could not delete entry");
-
-      
-
-
+     
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
         QSqlQuery insertentry(sdeleteentry.arg(description),newtask.db);
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag))) 
             QMessageBox::critical(this,"info","insert not create table");
-
-
-
 
 
         ui->to_be_done->clear();
@@ -402,24 +393,20 @@ void ToDoApp:: select_item_finished()
 
         QString sdeleteentry ="DELETE FROM task where description='%1' ";
         QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
-
-
-        QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
-        QSqlQuery insertentry(sdeleteentry.arg(afdescription),newtask.db);
-        
         if(!delentry.exec(sdeleteentry))
             QMessageBox::critical(this,"info","could not delete entry");
 
-
-
-
+        QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
+        QSqlQuery insertentry(sdeleteentry.arg(afdescription),newtask.db);        
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
             QMessageBox::critical(this,"info","insert not create table");
-
-           ui->to_be_done->clear();
-           ui->todays_task->clear();
-           ui->finished->clear();
-           loaddatabase();
+            
+            
+        ui->to_be_done->clear();
+        ui->todays_task->clear();
+        ui->finished->clear();
+        loaddatabase();
+        
     }
 
 
@@ -449,17 +436,16 @@ void ToDoApp:: select_item_today()
 
         QString sdeleteentry ="DELETE FROM task where description='%1' ";
         QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
-
         if(!delentry.exec(sdeleteentry))
             QMessageBox::critical(this,"info","could not delete entry");
 
 
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
-        QSqlQuery insertentry(insert.arg(description),newtask.db);
+        QSqlQuery insertentry(insert.arg(description),newtask.db);        
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
             QMessageBox::critical(this,"info","insert not create table");
          
-
+         
          ui->to_be_done->clear();
          ui->todays_task->clear();
          ui->finished->clear();
