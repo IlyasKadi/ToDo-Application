@@ -652,13 +652,13 @@ The MVC has it's version of moving from a task to another by editing it ,and we 
 This is what it looks like before selecting
 
 <div align="center">
-    <img src="images/before_select.png .png"/>
+    <img src="images/before_select.png"/>
 </div>
 
 This is what it looks like after selecting
 
 <div align="center">
-    <img src="images/after_select.png .png"/>
+    <img src="images/after_select.png"/>
 </div>
 ```cpp
 void TaskManager::on_action_Delete_triggered()
