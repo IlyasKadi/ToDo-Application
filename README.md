@@ -66,18 +66,18 @@ To get a local copy up and running follow these simple example steps.
 <!-- Use-Cases -->
 # Use-Cases
 
-Here is a list of cases that the user could perform with our app:
+Here is a list of **cases** that the user could **perform** with our app:
 
-   1. A user should be able to close the application of course.
-   2. A Todo application cannot be useful, unless it offers the possibility of creating new tasks.    
-   3. The View of the main widget should be split in three areas:   
-        1. The first (en persistent) area shows the list of today tasks.
-        2. The second one is reserved for pending task (tasks for the future).
-        3. Finally, the third one shows the set of finished tasks.
+   1. A user should be able to **close** the application of course.
+   2. A Todo application cannot be useful, unless it offers the possibility of **creating new tasks**.    
+   3. The View of the main widget should be **split** in **three** areas:   
+        1. The first (en persistent) area shows the list of **today** tasks.
+        2. The second one is reserved for **pending** task (tasks for the future).
+        3. Finally, the third one shows the set of **finished** tasks.
         
-   4. Each category must be shown with a custom icon.
+   4. Each category must be shown with a **custom** icon.
 
-   5. The user could either hide/show the pending and finished views.
+   5. The user could either `hide/show` the pending and finished views.
 
    6. Finally, the tasks entered to your application must remains in the app in future use.
 
