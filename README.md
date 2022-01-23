@@ -41,15 +41,17 @@ To get a local copy up and running follow these simple example steps.
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-![animation_300_kyqkprd0](https://user-images.githubusercontent.com/80456274/150660939-fe1f82f1-0e05-4832-8eac-426df927db03.gif)
 
 📝📧📆🗑️❗⚠️
 
 <!-- Overview -->
 # Overview
 
+
+![animation_300_kyqkprd0](https://user-images.githubusercontent.com/80456274/150660939-fe1f82f1-0e05-4832-8eac-426df927db03.gif)
+
 <div align="center">
-    <img src="![animation_300_kyqkprd0](https://user-images.githubusercontent.com/80456274/150661036-77e38fa1-568d-4a82-8623-e3e4743bec38.gif)" alt="This is an animated"/>
+    <img src="images/inter.png"/>
 </div>
 
 
