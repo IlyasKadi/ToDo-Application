@@ -660,7 +660,10 @@ This is what it looks like after selecting
 <div align="center">
     <img src="images/after_select.png"/>
 </div>
+
+
 ```cpp
+
 void TaskManager::on_action_Delete_triggered()
 {
 
