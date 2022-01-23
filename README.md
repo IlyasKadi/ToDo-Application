@@ -607,7 +607,9 @@ void ToDoApp:: select_item_today()
 
 <!-- MVC-Model -->
 # MVC-Model
-The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget
+The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget. 
+
+> The MVC has also it's version of moving from a task to another by editing it.
 
 ```cpp 
 TaskManager::TaskManager(QWidget *parent)
@@ -648,7 +650,7 @@ loaddatabase():
        Ftaskmodel->clear();
        loaddatabase();
 ```
-The MVC has it's version of moving from a task to another by editing it ,and we added aslo a delete function for it (after selecting a task) :
+We aslo added a delete function for it (after selecting a task) :
 
 > This is what it looks like before selecting :
 
