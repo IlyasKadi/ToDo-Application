@@ -610,6 +610,17 @@ void ToDoApp:: select_item_today()
 The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget :
 
 ```cpp 
+TaskManager::TaskManager(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::Task
+```
+```cpp
+    tttaskmodel = new QStandardItemModel;
+    Ftaskmodel = new QStandardItemModel;
+    TBDmodel= new QStandardItemModel;
+``` 
+
+```cpp 
 on_action_New_triggered(): 
 ```
 
@@ -617,16 +628,14 @@ on_action_New_triggered():
 loaddatabase(): 
 ``` 
 
+
 ```cpp
     for(auto e :newtask.TBD_list)
     {
-
         QString path{"/home/ilyas/Downloads/icons8-and-64.png"};
         QIcon icon(path);
-        auto model = new QStandardItemModel(this);
-        ui->to_be_done->setModel(model);
-        model->appendRow(new QStandardItem(QIcon(icon),e));
-
+        ui->to_be_done->setModel(TBDmodel);
+        TBDmodel->appendRow(new QStandardItem(QIcon(icon),e));
 
     }
     
