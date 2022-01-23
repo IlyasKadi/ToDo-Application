@@ -123,6 +123,12 @@ When the user create a new task, the application must **pop up** a dialog for th
 <!-- Item-Based-Model -->
 # Item-Based-Model
 
+> This is The tree of the project 
+
+<div align="center">
+    <img src="images/TODO_tree.png"/>
+</div>
+
 .Header
 
 ```cpp
