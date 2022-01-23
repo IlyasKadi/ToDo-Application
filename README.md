@@ -492,7 +492,7 @@ void ToDoApp:: select_item_tbd()
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag))) 
             QMessageBox::critical(this,"info","could not insert entry");
 
-        //Refreshing ListView
+        //Refreshing ListWidget
         ui->to_be_done->clear();
         ui->todays_task->clear();
         ui->finished->clear();
@@ -607,8 +607,26 @@ void ToDoApp:: select_item_today()
 
 <!-- MVC-Model -->
 # MVC-Model
+The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget :
+
+> `on_action_New_triggered()`:
+>  `loaddatabase()`:
+
+```cpp
+    for(auto e :newtask.TBD_list)
+    {
+
+        QString path{"/home/ilyas/Downloads/icons8-and-64.png"};
+        QIcon icon(path);
+        auto model = new QStandardItemModel(this);
+        ui->to_be_done->setModel(model);
+        model->appendRow(new QStandardItem(QIcon(icon),e));
 
 
+    }
+    //and so on other tasks_List (FT_list & TT_list)
+
+```
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
