@@ -131,6 +131,7 @@ When the user create a new task, the application must **pop up** a dialog for th
 
 
 taskdescription.h
+
 ```cpp
 
 class TaskDescription : public QDialog
@@ -162,41 +163,8 @@ private:
 };
 ```
 
-todoapp.h
-
-```cpp
-class ToDoApp : public QMainWindow
-{
-    Q_OBJECT
-
-public:
-    void loaddatabase();
-    ToDoApp(QWidget *parent = nullptr);
-    ~ToDoApp();
-
-private slots:
-    void on_action_New_triggered();
-
-    void select_item_today();
-
-    void select_item_finished();
-
-    void select_item_tbd();
-
-    void on_action_Task_Pending_triggered();
-
-    void on_action_Task_finished_triggered();
-
-    void on_actionToday_s_Tasks_triggered();
-
-    void on_actionAll_Tasks_triggered();
-
-private:
-    Ui::ToDoApp *ui;
-};
-```
-
 taskdescription.cpp
+
 ```cpp
 //Constructor
 TaskDescription::TaskDescription(QWidget *parent) :
@@ -282,7 +250,39 @@ void TaskDescription::setdatabase(QString description, bool finished, QString da
 }
 
 ```
+todoapp.h
 
+```cpp
+class ToDoApp : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    void loaddatabase();
+    ToDoApp(QWidget *parent = nullptr);
+    ~ToDoApp();
+
+private slots:
+    void on_action_New_triggered();
+
+    void select_item_today();
+
+    void select_item_finished();
+
+    void select_item_tbd();
+
+    void on_action_Task_Pending_triggered();
+
+    void on_action_Task_finished_triggered();
+
+    void on_actionToday_s_Tasks_triggered();
+
+    void on_actionAll_Tasks_triggered();
+
+private:
+    Ui::ToDoApp *ui;
+};
+```
 
 todoapp.cpp
 
