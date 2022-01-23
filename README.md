@@ -123,8 +123,39 @@ When the user create a new task, the application must **pop up** a dialog for th
 <!-- Item-Based-Model -->
 # Item-Based-Model
 
+```cpp
+class ToDoApp : public QMainWindow
+{
+    Q_OBJECT
 
+public:
+//      void dropEvent(QDropEvent *event) override;
+//  void restoredragdrop();
+    void loaddatabase();
+    ToDoApp(QWidget *parent = nullptr);
+    ~ToDoApp();
 
+private slots:
+    void on_action_New_triggered();
+
+    void select_item_today();
+
+    void select_item_finished();
+
+    void select_item_tbd();
+
+    void on_action_Task_Pending_triggered();
+
+    void on_action_Task_finished_triggered();
+
+    void on_actionToday_s_Tasks_triggered();
+
+    void on_actionAll_Tasks_triggered();
+
+private:
+    Ui::ToDoApp *ui;
+};
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
