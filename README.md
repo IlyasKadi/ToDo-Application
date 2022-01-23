@@ -634,11 +634,12 @@ loaddatabase():
         QIcon icon(path);
         ui->to_be_done->setModel(TBDmodel);
         TBDmodel->appendRow(new QStandardItem(QIcon(icon),e));
-
     }
     
+    //And so on .. with other tasks_Lists (FT_list & TT_list) and models (tttmodel,Ftaskmodel)
+
 ```
-> And so on .. with other tasks_Lists (FT_list & TT_list) and models (tttmodel,Ftaskmodel)
+
 
 ```cpp
        //While refreshing ListView           
