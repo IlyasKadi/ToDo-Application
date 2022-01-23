@@ -212,49 +212,38 @@ void ToDoApp::on_action_New_triggered()
     }
 
 
-
-
-
-
 }
 
 
 void ToDoApp::on_action_Task_Pending_triggered()
 {
     ui->to_be_done->show();
-     ui->todays_task->hide();
-      ui->finished->hide();
-
+    ui->todays_task->hide();
+    ui->finished->hide();
 }
 
 
 void ToDoApp::on_action_Task_finished_triggered()
 {
     ui->todays_task->hide();
-     ui->to_be_done->hide();
-     ui->finished->show();
-
-
+    ui->to_be_done->hide();
+    ui->finished->show();
 }
 
 
 void ToDoApp::on_actionToday_s_Tasks_triggered()
 {
     ui->finished->hide();
-     ui->to_be_done->hide();
-     ui->todays_task->show();
-
-
+    ui->to_be_done->hide();
+    ui->todays_task->show();
 }
 
 
 void ToDoApp::on_actionAll_Tasks_triggered()
 {
     ui->finished->show();
-     ui->to_be_done->show();
-     ui->todays_task->show();
-
-
+    ui->to_be_done->show();
+    ui->todays_task->show();
 }
 
 
@@ -263,8 +252,6 @@ void ToDoApp::loaddatabase()
 {
 
     TaskDescription w;
-
-
 
     w.db =QSqlDatabase::addDatabase("QSQLITE");
 
