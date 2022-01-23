@@ -45,7 +45,6 @@ To get a local copy up and running follow these simple example steps.
 📝📧📆🗑️❗⚠️
 
 <!-- Overview -->
-<div align="center"> <img src="images/todoApp.gif"alt="animation" width="100" height="100"/></div> 
 # Overview  
 
 
@@ -106,18 +105,10 @@ To get a local copy up and running follow these simple example steps.
 
 
  
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Our Team     : [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)
-
-
-
-Project Link : [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)
-
-
-
-Encadré par  : [Mr.BELCAID-Anass](https://anassbelcaid.github.io)
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+Our Team     : [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)                                                     |
+Project Link : [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)                                                                                  |
+Encadré par  : [Mr.BELCAID-Anass](https://anassbelcaid.github.io)                                                                                                 | 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 <p align="right">(<a href="#top">back to top</a>)</p>
