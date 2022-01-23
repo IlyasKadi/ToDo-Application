@@ -441,7 +441,8 @@ void ToDoApp:: select_item_today()
 
     newtask.ui->lineEdit->setText(description);
     newtask.ui->comboBox->setCurrentText(tag);
-
+    //(no need to change checkbox : finsished it's already unchecked by DEFLT)
+    //(no need to change date : Today's date is the date set by DEFLT)
 
     auto reply = newtask.exec();
     if(reply == TaskDescription::Accepted)
