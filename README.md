@@ -16,10 +16,10 @@
   <ol>      
       <a href="#about-the-project">About The Project</a>         
       <li><a href="#Overview">Overview</a></li>
-      <li><a href="#Traffic-Light">Use Cases</a></li> 
-      <li><a href="#Digital-clock">Defining a Task</a></li> 
-      <li><a href="#Traffic-Light">Item Based Model</a></li> 
-      <li><a href="#Digital-clock">MVC Model</a></li>
+      <li><a href="#Use-Cases">Use Cases</a></li> 
+      <li><a href="#Defining-a-Task">Defining a Task</a></li> 
+      <li><a href="#Item-Based-Model">Item Based Model</a></li> 
+      <li><a href="#MVC-Model">MVC Model</a></li>
   </ol>
 
 
@@ -60,18 +60,11 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-<!-- Traffic-Light -->
-# Traffic-Light
+<!-- Use-Cases -->
+# Use-Cases
 
 
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- Digital-clock -->
-# Digital-clock
 
 
 
@@ -80,8 +73,8 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-<!-- Traffic-Light -->
-# Traffic-Light
+<!-- Defining-a-Task -->
+# Defining-a-Task
 
 
 
@@ -89,8 +82,18 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<!-- Digital-clock -->
-# Digital-clock
+
+<!-- Item-Based-Model -->
+# Item-Based-Model
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MVC-Model -->
+# MVC-Model
 
 
 
@@ -99,7 +102,7 @@ To get a local copy up and running follow these simple example steps.
 
 
  
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Our Team - [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0)
 
 Project Link: [ToDo-Application](https://github.com/IlyasKadi/ToDo-Application)
