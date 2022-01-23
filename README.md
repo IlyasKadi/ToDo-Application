@@ -251,12 +251,12 @@ void ToDoApp::on_actionAll_Tasks_triggered()
 void ToDoApp::loaddatabase()
 {
 
-    TaskDescription w;
+    TaskDescription newtask;
 
-    w.db =QSqlDatabase::addDatabase("QSQLITE");
+    newtask.db =QSqlDatabase::addDatabase("QSQLITE");
 
-    w.db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
-    w.db.open();
+    newtask.db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
+    newtask.db.open();
 
      const QString format = "ddd MMM d yyyy";
     QDate currdate = QDate::currentDate();
@@ -266,54 +266,48 @@ void ToDoApp::loaddatabase()
     QString sttquery ="SELECT * from task where finished =0 and date ='%1'";
     QString stbd_query("SELECT * from task where finished =0 and date !='%1' ");
 
-    QSqlQuery F_query("SELECT * from task where finished =1",w.db);
-    QSqlQuery tbd_query(stbd_query.arg(todadate),w.db);
-    QSqlQuery tt_query(sttquery.arg(todadate),w.db);
+    QSqlQuery F_query("SELECT * from task where finished =1",newtask.db);
+    QSqlQuery tbd_query(stbd_query.arg(todadate),newtask.db);
+    QSqlQuery tt_query(sttquery.arg(todadate),newtask.db);
 
 
     while(F_query.next())
     {
-    w.FT_list.append(""+F_query.value(0).toString()+": Finished  Due: " + F_query.value(2).toString() + " " +F_query.value(3).toString());
+    newtask.FT_list.append(""+F_query.value(0).toString()+": Finished  Due: " + F_query.value(2).toString() + " " +F_query.value(3).toString());
     }
     while(tbd_query.next())
     {
 
-    w.TBD_list.append(""+tbd_query.value(0).toString()+": Pending  Due: " + tbd_query.value(2).toString() + " " +tbd_query.value(3).toString());
+    newtask.TBD_list.append(""+tbd_query.value(0).toString()+": Pending  Due: " + tbd_query.value(2).toString() + " " +tbd_query.value(3).toString());
 
     }
     while(tt_query.next())
     {
 
-    w.TT_list.append(""+tt_query.value(0).toString()+": Task for Today Due: "+ tt_query.value(2).toString() + " " +tt_query.value(3).toString());
+    newtask.TT_list.append(""+tt_query.value(0).toString()+": Task for Today Due: "+ tt_query.value(2).toString() + " " +tt_query.value(3).toString());
     }
 
 
 
-
-
-    for(auto e :w.TBD_list)
+    for(auto e :newtask.TBD_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-and-64.png"};
         QIcon icon(path);
         ui->to_be_done->addItem(new QListWidgetItem(icon,e));
-
     }
 
-    for(auto e :w.TT_list)
+    for(auto e :newtask.TT_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-tâche-48.png"};
         QIcon icon(path);
         ui->todays_task->addItem(new QListWidgetItem(icon,e));
-
-//          ui->todays_task->addItem(new QListWidgetItem::setData());
-
     }
-    for(auto e :w.FT_list)
+    
+    for(auto e :newtask.FT_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-tâche-terminée-48.png"};
         QIcon icon(path);
         ui->finished->addItem(new QListWidgetItem(icon,e));
-
     }
 
 
