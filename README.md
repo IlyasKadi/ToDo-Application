@@ -45,7 +45,9 @@ To get a local copy up and running follow these simple example steps.
 📝📧📆🗑️❗⚠️
 
 <!-- Overview -->
-# Overview
+# Overview <div align="center">
+    <img src="images/todoApp.gif"alt="animation" width="100" height="100"/>
+</div>
 
 
 
