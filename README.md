@@ -373,11 +373,11 @@ void ToDoApp:: select_item_finished()
     QString description = fulldes.mid(0,index);
     QString date = fulldes.mid(14+index+3,15);
     QString tag = fulldes.mid(31+index+2,6);
-    QDate d = QDate::fromString(date,"ddd MMM d yyyy");
+    QDate date = QDate::fromString(date,"ddd MMM d yyyy");
     QString finished = fulldes.mid(index+1,9);
 
     newtask.ui->lineEdit->setText(finished);
-    newtask.ui->dateEdit->setDate(d);
+    newtask.ui->dateEdit->setDate(date);
     newtask.ui->comboBox->setCurrentText(tag);
     newtask.ui->checkBox->setChecked(1);
 
