@@ -309,16 +309,9 @@ void ToDoApp::loaddatabase()
 void ToDoApp:: select_item_tbd()
 {
     TaskDescription newtask;
-
-
-
     newtask.db =QSqlDatabase::addDatabase("QSQLITE");
-
     newtask.db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
     newtask.db.open();
-
-
-
 
     const QString format = "ddd MMM d yyyy";
     QString selectedvalue= ui->to_be_done->currentItem()->text();
@@ -339,40 +332,35 @@ void ToDoApp:: select_item_tbd()
     auto reply = newtask.exec();
     if(reply == TaskDescription::Accepted)
     {
-            QString afdescription = newtask.ui->lineEdit->text();
-            QString afdate = newtask.ui->dateEdit->date().toString(format);
-            QString aftag=newtask.ui->comboBox->currentText();
-            bool finished=newtask.ui->checkBox->isChecked();
+        QString afdescription = newtask.ui->lineEdit->text();
+        QString afdate = newtask.ui->dateEdit->date().toString(format);
+        QString aftag=newtask.ui->comboBox->currentText();
+        bool finished=newtask.ui->checkBox->isChecked();
 
 
-          QString sdeleteentry ="DELETE FROM task where description='%1' ";
-           QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
+        QString sdeleteentry ="DELETE FROM task where description='%1' ";
+        QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
 
 
-           if(!delentry.exec(sdeleteentry))
-           {
-               QMessageBox::critical(this,"info","could not delete entry");
+        if(!delentry.exec(sdeleteentry))
+            QMessageBox::critical(this,"info","could not delete entry");
 
-           }
+      
 
 
-           QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
-           QSqlQuery insertentry(sdeleteentry.arg(description),newtask.db);
-           if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
-           {
-               QMessageBox::critical(this,"info","insert not create table");
-           }
+        QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
+        QSqlQuery insertentry(sdeleteentry.arg(description),newtask.db);
+        if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag))) 
+            QMessageBox::critical(this,"info","insert not create table");
 
 
 
 
 
-
-             ui->to_be_done->clear();
-             ui->todays_task->clear();
-             ui->finished->clear();
-
-            loaddatabase();
+        ui->to_be_done->clear();
+        ui->todays_task->clear();
+        ui->finished->clear();
+        loaddatabase();
 
 
     }
