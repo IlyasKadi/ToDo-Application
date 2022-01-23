@@ -109,6 +109,13 @@ A `Task` is defined by the following attributes:
 When the user create a new task, the application must **pop up** a dialog for the user to get those values. Here is an example ( not mandatory, I prefer you create your own) example:
 
 
+
+<div align="center">
+    <img src="images/dialog.png"/>
+</div>
+
+> An example of a dialog to get a new task.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
