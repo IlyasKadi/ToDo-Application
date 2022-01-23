@@ -190,27 +190,30 @@ void ToDoApp::on_action_New_triggered()
     TaskDescription newtask ;
     newtask.exec();
 
-
+    //Add Items(tasks) to the ListView from their appropriate table :
+    
+    //TBD_list >> to_be_done
     for(auto e :newtask.TBD_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-and-64.png"};
         QIcon icon(path);
         ui->to_be_done->addItem(new QListWidgetItem(icon,e));
-
     }
+    
+    //TT_list >> todays_task
     for(auto e :newtask.TT_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-tâche-48.png"};
         QIcon icon(path);
         ui->todays_task->addItem(new QListWidgetItem(icon,e));
-
     }
+    
+    //FT_list >> finished
     for(auto e :newtask.FT_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-tâche-terminée-48.png"};
         QIcon icon(path);
         ui->finished->addItem(new QListWidgetItem(icon,e));
-
     }
 
 
