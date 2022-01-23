@@ -123,14 +123,14 @@ When the user create a new task, the application must **pop up** a dialog for th
 <!-- Item-Based-Model -->
 # Item-Based-Model
 
+.cpp
+
 ```cpp
 class ToDoApp : public QMainWindow
 {
     Q_OBJECT
 
 public:
-//      void dropEvent(QDropEvent *event) override;
-//  void restoredragdrop();
     void loaddatabase();
     ToDoApp(QWidget *parent = nullptr);
     ~ToDoApp();
