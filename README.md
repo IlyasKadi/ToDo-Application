@@ -362,9 +362,9 @@ void ToDoApp:: select_item_tbd()
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
         QSqlQuery insertentry(newtask.db);
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag))) 
-            QMessageBox::critical(this,"info","insert not create table");
+            QMessageBox::critical(this,"info","could not insert entry");
 
-
+        //Refreshing ListView
         ui->to_be_done->clear();
         ui->todays_task->clear();
         ui->finished->clear();
@@ -416,7 +416,7 @@ void ToDoApp:: select_item_finished()
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
         QSqlQuery insertentry(newtask.db);        
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
-            QMessageBox::critical(this,"info","insert not create table");
+            QMessageBox::critical(this,"info","could not insert entry");
             
             
         ui->to_be_done->clear();
@@ -460,7 +460,7 @@ void ToDoApp:: select_item_today()
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
         QSqlQuery insertentry(newtask.db);        
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
-            QMessageBox::critical(this,"info","insert not create table");
+            QMessageBox::critical(this,"info","could not insert entry");
          
          
          ui->to_be_done->clear();
