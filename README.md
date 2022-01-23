@@ -258,18 +258,21 @@ void ToDoApp::loaddatabase()
     newtask.db =QSqlDatabase::addDatabase("QSQLITE");
     newtask.db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
     newtask.db.open();
-
+       
     const QString format = "ddd MMM d yyyy";
     QDate currdate = QDate::currentDate();
     QString todadate = currdate.toString(format);
 
-
+    //Query for Today's Ts
     QString sttquery ="SELECT * from task where finished =0 and date ='%1'";
-    QString stbd_query("SELECT * from task where finished =0 and date !='%1' ");
-
-    QSqlQuery F_query("SELECT * from task where finished =1",newtask.db);
-    QSqlQuery tbd_query(stbd_query.arg(todadate),newtask.db);
     QSqlQuery tt_query(sttquery.arg(todadate),newtask.db);
+
+    //Query for Pendind_Ts
+    QString stbd_query("SELECT * from task where finished =0 and date !='%1' ");
+    QSqlQuery tbd_query(stbd_query.arg(todadate),newtask.db);
+
+    //Query for Finished_Ts
+    QSqlQuery F_query("SELECT * from task where finished =1",newtask.db);
 
 
     while(F_query.next())
