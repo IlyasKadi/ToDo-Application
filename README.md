@@ -55,9 +55,6 @@ To get a local copy up and running follow these simple example steps.
 > Overview of our application. 
 
 
-<div align="center">
-    <img src="images/todoApp.gif"alt="animation" width="100" height="100"/>
-</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -82,9 +79,6 @@ Here is a list of **cases** that the user could **perform** with our app:
    6. Finally, the tasks entered to your application must remains in the app in future use.
 
    > Meaning, If I create a task and I close the application, next time I opened the application, I should find my tasks and not start from scratch.
-
-
-
 
 
 
@@ -130,7 +124,7 @@ When the user create a new task, the application must **pop up** a dialog for th
 </div>
 
 
-taskdescription.h
+**taskdescription.h**
 
 ```cpp
 
@@ -163,7 +157,7 @@ private:
 };
 ```
 
-taskdescription.cpp
+**taskdescription.cpp**
 
 ```cpp
 //Constructor
@@ -250,7 +244,7 @@ void TaskDescription::setdatabase(QString description, bool finished, QString da
 }
 
 ```
-todoapp.h
+**todoapp.h**
 
 ```cpp
 class ToDoApp : public QMainWindow
@@ -284,7 +278,7 @@ private:
 };
 ```
 
-todoapp.cpp
+**todoapp.cpp**
 
 ```cpp
 
@@ -607,6 +601,7 @@ void ToDoApp:: select_item_today()
 
 <!-- MVC-Model -->
 # MVC-Model
+
 The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget. 
 
 > The MVC has also it's version of moving from a task to another by editing it.
@@ -691,7 +686,6 @@ void TaskManager::on_action_Delete_triggered()
         QString date = fulldes.mid(19+index+3,15);
         QString tag = fulldes.mid(36+index+2,6);
 
-
             QString sdeleteentry ="DELETE FROM task where description='%1' ";
             QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
             if(!delentry.exec(sdeleteentry))
@@ -727,12 +721,10 @@ void TaskManager::on_action_Delete_triggered()
 
         newtask.ui->lineEdit->setText(description);
 
-
             QString sdeleteentry ="DELETE FROM task where description='%1' ";
             QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
             if(!delentry.exec(sdeleteentry))
             {QMessageBox::critical(this,"info","could not delete entry");}
-
 
             //Refreshing ListView
             TBDmodel->clear();
@@ -764,7 +756,6 @@ void TaskManager::on_action_Delete_triggered()
 
         newtask.ui->lineEdit->setText(description);
 
-
             QString sdeleteentry ="DELETE FROM task where description='%1' ";
             QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
             if(!delentry.exec(sdeleteentry))
@@ -776,8 +767,6 @@ void TaskManager::on_action_Delete_triggered()
             Ftaskmodel->clear();
             loaddatabase();
    }
-
-
 }
 
 void TaskManager::deleteslot()
@@ -793,8 +782,6 @@ And for the connections :
     connect(ui->finished, &QAbstractItemView::clicked , this,  &TaskManager::deleteslot);
     connect(ui->to_be_done, &QAbstractItemView::clicked , this,  &TaskManager::deleteslot);
 ```
-
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
