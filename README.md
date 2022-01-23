@@ -49,7 +49,7 @@ To get a local copy up and running follow these simple example steps.
 # Overview
 
 <div align="center">
-    <img src="![animation_300_kyqkprd0](https://user-images.githubusercontent.com/80456274/150660939-fe1f82f1-0e05-4832-8eac-426df927db03.gif)" alt="This is an animated gif image, but it does not move"/>
+    <img src="![animation_300_kyqkprd0](https://user-images.githubusercontent.com/80456274/150660939-fe1f82f1-0e05-4832-8eac-426df927db03.gif)" alt="This is an animated"/>
 </div>
 
 
