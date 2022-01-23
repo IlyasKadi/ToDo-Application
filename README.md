@@ -216,7 +216,7 @@ void ToDoApp::on_action_New_triggered()
 
 }
 
-
+//Show Pending_Ts only
 void ToDoApp::on_action_Task_Pending_triggered()
 {
     ui->to_be_done->show();
@@ -224,7 +224,7 @@ void ToDoApp::on_action_Task_Pending_triggered()
     ui->finished->hide();
 }
 
-
+//Show Finished_TS only
 void ToDoApp::on_action_Task_finished_triggered()
 {
     ui->todays_task->hide();
@@ -232,7 +232,7 @@ void ToDoApp::on_action_Task_finished_triggered()
     ui->finished->show();
 }
 
-
+//Show Today's_Ts only
 void ToDoApp::on_actionToday_s_Tasks_triggered()
 {
     ui->finished->hide();
@@ -240,7 +240,7 @@ void ToDoApp::on_actionToday_s_Tasks_triggered()
     ui->todays_task->show();
 }
 
-
+//Show All_Ts 
 void ToDoApp::on_actionAll_Tasks_triggered()
 {
     ui->finished->show();
