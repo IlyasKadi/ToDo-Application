@@ -126,7 +126,7 @@ When the user create a new task, the application must **pop up** a dialog for th
 > This is The tree of the project 
 
 <div align="center">
-    <img src="images/TODO_tree.png"/>
+    <img src="images/TODO_Tree.png"/>
 </div>
 
 .Header
