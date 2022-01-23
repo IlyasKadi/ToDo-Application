@@ -254,11 +254,10 @@ void ToDoApp::loaddatabase()
     TaskDescription newtask;
 
     newtask.db =QSqlDatabase::addDatabase("QSQLITE");
-
     newtask.db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
     newtask.db.open();
 
-     const QString format = "ddd MMM d yyyy";
+    const QString format = "ddd MMM d yyyy";
     QDate currdate = QDate::currentDate();
     QString todadate = currdate.toString(format);
 
@@ -272,20 +271,13 @@ void ToDoApp::loaddatabase()
 
 
     while(F_query.next())
-    {
-    newtask.FT_list.append(""+F_query.value(0).toString()+": Finished  Due: " + F_query.value(2).toString() + " " +F_query.value(3).toString());
-    }
+        newtask.FT_list.append(""+F_query.value(0).toString()+": Finished  Due: " + F_query.value(2).toString() + " " +F_query.value(3).toString());
+    
     while(tbd_query.next())
-    {
+        newtask.TBD_list.append(""+tbd_query.value(0).toString()+": Pending  Due: " + tbd_query.value(2).toString() + " " +tbd_query.value(3).toString());
 
-    newtask.TBD_list.append(""+tbd_query.value(0).toString()+": Pending  Due: " + tbd_query.value(2).toString() + " " +tbd_query.value(3).toString());
-
-    }
     while(tt_query.next())
-    {
-
-    newtask.TT_list.append(""+tt_query.value(0).toString()+": Task for Today Due: "+ tt_query.value(2).toString() + " " +tt_query.value(3).toString());
-    }
+        newtask.TT_list.append(""+tt_query.value(0).toString()+": Task for Today Due: "+ tt_query.value(2).toString() + " " +tt_query.value(3).toString());
 
 
 
