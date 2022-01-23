@@ -53,7 +53,7 @@ To get a local copy up and running follow these simple example steps.
 <div align="center">
     <img src="images/inter.png"/>
 </div>
-
+> Overview of our application. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
