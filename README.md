@@ -277,7 +277,7 @@ void ToDoApp::loaddatabase()
     //Query for Finished_Ts
     QSqlQuery F_query("SELECT * from task where finished =1",newtask.db);
 
-
+   //Load data from DB to each task_List
     while(F_query.next())
         newtask.FT_list.append(""+F_query.value(0).toString()+": Finished  Due: " + F_query.value(2).toString() + " " +F_query.value(3).toString());
     
@@ -288,14 +288,16 @@ void ToDoApp::loaddatabase()
         newtask.TT_list.append(""+tt_query.value(0).toString()+": Task for Today Due: "+ tt_query.value(2).toString() + " " +tt_query.value(3).toString());
 
 
-
+    //ADd items(tasks) to the list view from tasks_List :
+    
+    //TBD_list >> to_be_done
     for(auto e :newtask.TBD_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-and-64.png"};
         QIcon icon(path);
         ui->to_be_done->addItem(new QListWidgetItem(icon,e));
     }
-
+    //todays_task >> TT_list
     for(auto e :newtask.TT_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-tâche-48.png"};
@@ -303,6 +305,7 @@ void ToDoApp::loaddatabase()
         ui->todays_task->addItem(new QListWidgetItem(icon,e));
     }
     
+    //FT_list >> finished
     for(auto e :newtask.FT_list)
     {
         QString path{"/home/ilyas/Downloads/icons8-tâche-terminée-48.png"};
