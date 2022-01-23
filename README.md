@@ -129,7 +129,7 @@ When the user create a new task, the application must **pop up** a dialog for th
     <img src="images/TODO_Tree.png"/>
 </div>
 
-.Header
+todoapp.h
 
 ```cpp
 class ToDoApp : public QMainWindow
@@ -162,7 +162,7 @@ private:
     Ui::ToDoApp *ui;
 };
 ```
-.cpp
+todoapp.cpp
 
 ```cpp
 
