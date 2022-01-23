@@ -373,9 +373,8 @@ void ToDoApp:: select_item_tbd()
 void ToDoApp:: select_item_finished()
 {
 
-        TaskDescription newtask;
-
-
+    TaskDescription newtask;
+    
     const QString format = "ddd MMM d yyyy";
     QString fulldes = ui->finished->currentItem()->data(0).toString();
     int index = fulldes.indexOf(':');
@@ -384,7 +383,7 @@ void ToDoApp:: select_item_finished()
     QString date = fulldes.mid(14+index+3,15);
     QString tag = fulldes.mid(31+index+2,6);
     QDate d = QDate::fromString(date,"ddd MMM d yyyy");
- QString finished = fulldes.mid(index+1,9);
+    QString finished = fulldes.mid(index+1,9);
 
     newtask.ui->lineEdit->setText(finished);
     newtask.ui->dateEdit->setDate(d);
@@ -401,36 +400,26 @@ void ToDoApp:: select_item_finished()
         QString aftag=newtask.ui->comboBox->currentText();
         bool finished=newtask.ui->checkBox->isChecked();
 
-
-
-
         QString sdeleteentry ="DELETE FROM task where description='%1' ";
         QSqlQuery delentry(sdeleteentry.arg(description),newtask.db);
 
 
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
         QSqlQuery insertentry(sdeleteentry.arg(afdescription),newtask.db);
-           if(!delentry.exec(sdeleteentry))
-           {
-               QMessageBox::critical(this,"info","could not delete entry");
-
-           }
+        
+        if(!delentry.exec(sdeleteentry))
+            QMessageBox::critical(this,"info","could not delete entry");
 
 
 
-           if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
-           {
-               QMessageBox::critical(this,"info","insert not create table");
-           }
 
-
-
+        if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
+            QMessageBox::critical(this,"info","insert not create table");
 
            ui->to_be_done->clear();
            ui->todays_task->clear();
            ui->finished->clear();
-
-    loaddatabase();
+           loaddatabase();
     }
 
 
