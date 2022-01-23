@@ -41,7 +41,7 @@ To get a local copy up and running follow these simple example steps.
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-![animation_200_kyqhbxtt](https://user-images.githubusercontent.com/80456274/150659079-1e316ae5-7924-4d5d-8261-7d17d8b5f91c.gif)
+![animation_300_kyqkprd0](https://user-images.githubusercontent.com/80456274/150660939-fe1f82f1-0e05-4832-8eac-426df927db03.gif)
 
 📝📧📆🗑️❗⚠️
 
