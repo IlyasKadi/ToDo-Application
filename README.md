@@ -414,7 +414,7 @@ void ToDoApp::loaddatabase()
     }
 }
 ```
-> This is the function that makes you able to edit your task by selecting it (for all the listwidgets : to_be_done, finished,todays_task)
+> This is the function that makes you able to edit your task by selecting it (for all the listwidgets : to_be_done, finished, todays_task)
 
 ```cpp
 
