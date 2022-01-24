@@ -202,6 +202,12 @@ void TaskDescription::on_buttonBox_accepted()
     setdatabase( description, isfinished,  textdudate,  tag);
 }
 
+```
+
+
+> This is the function  that set up the database and associate it with User_Tasks_Data
+
+```cpp
 void TaskDescription::setdatabase(QString description, bool finished, QString date, QString tag)
 {
     // Setting up new file for the DB
@@ -345,6 +351,10 @@ void ToDoApp::on_actionAll_Tasks_triggered()
     ui->todays_task->show();
 }
 
+```
+> This is the function that load the database and store its data in tasks_List
+
+```cpp
 void ToDoApp::loaddatabase()
 {
     TaskDescription newtask;
@@ -403,6 +413,10 @@ void ToDoApp::loaddatabase()
         ui->finished->addItem(new QListWidgetItem(icon,e));
     }
 }
+```
+> This is the function that makes you able to edit your task by selecting it (for all the listwidgets : to_be_done, finished,todays_task)
+
+```cpp
 
 void ToDoApp:: select_item_tbd()
 {   
