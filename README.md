@@ -129,9 +129,7 @@ When the user create a new task, the application must **pop up** a dialog for th
 class TaskDescription : public QDialog
 {
     Q_OBJECT
-
 public:
-
      void setdatabase(QString description, bool finished, QString date, QString tag);
      QSqlDatabase db;
      QString date;
@@ -164,16 +162,13 @@ TaskDescription::TaskDescription(QWidget *parent) :
     ui(new Ui::TaskDescription)
 {
     ui->setupUi(this);
-
     setCurrentDate();
-
 }
 
 //Destructor
 TaskDescription::~TaskDescription()
 {
     delete ui;
-
 }
 
 //Setting today's date as default date
@@ -183,11 +178,9 @@ void TaskDescription::setCurrentDate()
     ui->dateEdit->setDate(date);
 }
 
-
 //function applied once the Dialog is accepted
 void TaskDescription::on_buttonBox_accepted()
 {
-
     const QString format = "ddd MMM d yyyy";
 
     //Retrieving user_data
@@ -198,29 +191,23 @@ void TaskDescription::on_buttonBox_accepted()
     bool isfinished = ui->checkBox->isChecked();
     QString description = ui->lineEdit->text();
 
-
     //Filling up tasks_List from user_data ..
 
     if(isfinished)
         FT_list.append(description+": Finished  Due: " + textdudate + " " + tag);
 
-
     else if(duedate==currdate)
         TT_list.append(description+": Task for Today Due: " + textdudate + " " + tag);
-
 
     else if(duedate>currdate && !isfinished)
         TBD_list.append(description+": Pending  Due: " + textdudate + " " + tag);
 
     //settinging up data base and insert new entry from user_data retrieved
     setdatabase( description, isfinished,  textdudate,  tag);
-
-
 }
 
 void TaskDescription::setdatabase(QString description, bool finished, QString date, QString tag)
 {
-
     // Setting up new file for the DB
     db =QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/ilyas/Desktop/test_2.sqlite");
@@ -237,18 +224,14 @@ void TaskDescription::setdatabase(QString description, bool finished, QString da
     QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
     if(!query.exec(insert.arg(description).arg(finished).arg(date).arg(tag)))
         QMessageBox::critical(this,"info","insert not create table");
-
-
 }
 
 ```
 **todoapp.h**
-
 ```cpp
 class ToDoApp : public QMainWindow
 {
     Q_OBJECT
-
 public:
     void loaddatabase();
     ToDoApp(QWidget *parent = nullptr);
@@ -270,7 +253,7 @@ private slots:
     void on_actionToday_s_Tasks_triggered();
 
     void on_actionAll_Tasks_triggered();
-
+    
 private:
     Ui::ToDoApp *ui;
 };
@@ -279,7 +262,6 @@ private:
 **todoapp.cpp**
 
 ```cpp
-
 //constructor
 ToDoApp::ToDoApp(QWidget *parent)
     : QMainWindow(parent)
@@ -303,7 +285,6 @@ ToDoApp::~ToDoApp()
 {
     delete ui;
 }
-
 //NewTAsk Action
 void ToDoApp::on_action_New_triggered()
 {
@@ -318,8 +299,7 @@ void ToDoApp::on_action_New_triggered()
         QString path{"/home/ilyas/Downloads/icons8-and-64.png"};
         QIcon icon(path);
         ui->to_be_done->addItem(new QListWidgetItem(icon,e));
-    }
-    
+    }  
     //TT_list >> todays_task
     for(auto e :newtask.TT_list)
     {
@@ -335,8 +315,6 @@ void ToDoApp::on_action_New_triggered()
         QIcon icon(path);
         ui->finished->addItem(new QListWidgetItem(icon,e));
     }
-
-
 }
 
 //Show Pending_Ts only
@@ -371,11 +349,8 @@ void ToDoApp::on_actionAll_Tasks_triggered()
     ui->todays_task->show();
 }
 
-
-
 void ToDoApp::loaddatabase()
 {
-
     TaskDescription newtask;
 
     newtask.db =QSqlDatabase::addDatabase("QSQLITE");
@@ -407,7 +382,6 @@ void ToDoApp::loaddatabase()
     while(tt_query.next())
         newtask.TT_list.append(""+tt_query.value(0).toString()+": Task for Today Due: "+ tt_query.value(2).toString() + " " +tt_query.value(3).toString());
 
-
     //ADd items(tasks) to the list view from tasks_List :
     
     //TBD_list >> to_be_done
@@ -432,14 +406,10 @@ void ToDoApp::loaddatabase()
         QIcon icon(path);
         ui->finished->addItem(new QListWidgetItem(icon,e));
     }
-
-
-
 }
 
 void ToDoApp:: select_item_tbd()
-{
-    
+{   
     TaskDescription newtask;
 
     const QString format = "ddd MMM d yyyy";
@@ -461,7 +431,6 @@ void ToDoApp:: select_item_tbd()
     newtask.ui->dateEdit->setDate(Date);
     newtask.ui->comboBox->setCurrentText(tag);
     //(no need to change checkbox : finsished it's already unchecked by DEFLT)
-
 
     auto reply = newtask.exec();
     if(reply == TaskDescription::Accepted)
@@ -489,18 +458,11 @@ void ToDoApp:: select_item_tbd()
         ui->todays_task->clear();
         ui->finished->clear();
         loaddatabase();
-
-
     }
-
-
-
-
-
 }
 void ToDoApp:: select_item_finished()
-{
 
+{
     TaskDescription newtask;
     
     const QString format = "ddd MMM d yyyy";
@@ -518,11 +480,9 @@ void ToDoApp:: select_item_finished()
     newtask.ui->comboBox->setCurrentText(tag);
     newtask.ui->checkBox->setChecked(1);
 
-
     auto reply = newtask.exec();
     if(reply == TaskDescription::Accepted)
     {
-
         QString afdescription = newtask.ui->lineEdit->text();
         QString afdate = newtask.ui->dateEdit->date().toString(format);
         QString aftag=newtask.ui->comboBox->currentText();
@@ -537,16 +497,12 @@ void ToDoApp:: select_item_finished()
         QSqlQuery insertentry(newtask.db);        
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
             QMessageBox::critical(this,"info","could not insert entry");
-            
-            
+                      
         ui->to_be_done->clear();
         ui->todays_task->clear();
         ui->finished->clear();
-        loaddatabase();
-        
+        loaddatabase();       
     }
-
-
 }
 void ToDoApp:: select_item_today()
 {
@@ -577,20 +533,16 @@ void ToDoApp:: select_item_today()
         if(!delentry.exec(sdeleteentry))
             QMessageBox::critical(this,"info","could not delete entry");
 
-
         QString insert {"INSERT INTO task values ('%1','%2','%3','%4')"};
         QSqlQuery insertentry(newtask.db);        
         if(!insertentry.exec(insert.arg(afdescription).arg(finished).arg(afdate).arg(aftag)))
             QMessageBox::critical(this,"info","could not insert entry");
-         
-         
+                 
          ui->to_be_done->clear();
          ui->todays_task->clear();
          ui->finished->clear();
          loaddatabase();
-
     }
-
 }
 ```
 
@@ -659,10 +611,8 @@ We aslo added a delete 🗑️ function for it (after selecting a task) :
 
 
 ```cpp
-
 void TaskManager::on_action_Delete_triggered()
 {
-
         //Pending tasks :
     if(ui->to_be_done->currentIndex().isValid())
     {
@@ -694,7 +644,6 @@ void TaskManager::on_action_Delete_triggered()
             Ftaskmodel->clear();
             loaddatabase();
     }
-
 
         //Today's tasks :
     else if(ui->todays_task->currentIndex().isValid())
@@ -770,7 +719,6 @@ void TaskManager::on_action_Delete_triggered()
 void TaskManager::deleteslot()
 {
      ui->action_Delete->setEnabled(1);
-
 }
 ```
 
