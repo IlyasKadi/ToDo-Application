@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../Desktop/ilyas c++/icons/new_file.png</file>
+        <file>../Desktop/ilyas c++/icons/quit_icon.png</file>
+        <file>../Downloads/icons8-and-64.png</file>
+        <file>../Downloads/icons8-tâche-48.png</file>
+        <file>../Downloads/icons8-tâche-terminée-48.png</file>
+        <file>../Downloads/ro.gif</file>
+        <file>../Downloads/icons8-supprimer-pour-toujours-96.png</file>
+    </qresource>
+</RCC>

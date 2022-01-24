@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TaskManager</class>
+ <widget class="QMainWindow" name="TaskManager">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>572</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TaskManager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QListView" name="todays_task"/>
+        </item>
+        <item>
+         <widget class="QListView" name="to_be_done"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QListView" name="finished"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>572</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_New"/>
+    <addaction name="action_Delete"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Option">
+    <property name="title">
+     <string>&amp;Option</string>
+    </property>
+    <addaction name="action_Today_s_Tasks"/>
+    <addaction name="action_Pending_Tasks"/>
+    <addaction name="action_Finished_Tasks"/>
+    <addaction name="actionAll_Tasks"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Option"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_New"/>
+   <addaction name="action_Delete"/>
+   <addaction name="action_Quit"/>
+   <addaction name="action_Today_s_Tasks"/>
+   <addaction name="action_Pending_Tasks"/>
+   <addaction name="action_Finished_Tasks"/>
+   <addaction name="actionAll_Tasks"/>
+  </widget>
+  <action name="action_New">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Desktop/ilyas c++/icons/new_file.png</normaloff>:/Desktop/ilyas c++/icons/new_file.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+  </action>
+  <action name="action_Quit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Desktop/ilyas c++/icons/quit_icon.png</normaloff>:/Desktop/ilyas c++/icons/quit_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="action_Today_s_Tasks">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Downloads/icons8-tâche-48.png</normaloff>:/Downloads/icons8-tâche-48.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Today's Tasks</string>
+   </property>
+  </action>
+  <action name="action_Pending_Tasks">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Downloads/icons8-and-64.png</normaloff>:/Downloads/icons8-and-64.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Pending Tasks</string>
+   </property>
+  </action>
+  <action name="action_Finished_Tasks">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Downloads/icons8-tâche-terminée-48.png</normaloff>:/Downloads/icons8-tâche-terminée-48.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Finished Tasks</string>
+   </property>
+  </action>
+  <action name="action_Delete">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Downloads/icons8-supprimer-pour-toujours-96.png</normaloff>:/Downloads/icons8-supprimer-pour-toujours-96.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+  </action>
+  <action name="actionAll_Tasks">
+   <property name="text">
+    <string>All_Tasks</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_Quit</sender>
+   <signal>triggered()</signal>
+   <receiver>TaskManager</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
