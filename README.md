@@ -548,6 +548,13 @@ void ToDoApp:: select_item_today()
 <!-- MVC-Model -->
 # MVC-Model
 
+> This is The tree of the project 
+> 
+<div align="center">
+    <img src="images/TaskM_Tree.png"/>
+</div>
+
+
 The MVC model won't be much different from the Item based, we are just going to replace  the `QListWidget` with a`QStandardItemModel` set to the ListView, so the change will only concern each implementation of ListWidget. 
 
 > The MVC has also it's version of moving from a task to another by editing it.
